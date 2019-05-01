@@ -1,1 +1,363 @@
-/* Compile your LESS file! */
+.flex-desktop {
+  display: flex;
+  flex-flow: row wrap;
+}
+.button {
+  width: 150px;
+  padding: 2%;
+  text-align: center;
+  border-radius: 7%;
+  background: #009959;
+  color: #141414;
+}
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+}
+.main {
+  height: 85%;
+  background: #484848;
+  color: #cacaca;
+}
+.main header {
+  width: 100%;
+}
+.main header.top-content {
+  display: flex;
+  flex-flow: row wrap;
+  width: 55%;
+  margin: 0 auto;
+  margin-top: 10px;
+  background: #2e2e2e;
+  color: #cacaca;
+  padding: 2%;
+  box-shadow: 0.5rem 0.3rem 0.5rem #141414;
+}
+.main header.top-content h1 {
+  font-size: 3.75rem;
+  align-self: center;
+}
+@media (max-width: 500px) {
+  .main header.top-content h1 {
+    font-size: 1.75rem;
+  }
+}
+.main header.top-content img.profile {
+  order: -1;
+  width: 300px;
+  height: 300px;
+  border-radius: 75%;
+  overflow: hidden;
+  border: 4px solid #484848;
+}
+@media (max-width: 500px) {
+  .main header.top-content img.profile {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+  }
+}
+.main header.top-content p {
+  flex-grow: 1;
+  font-size: 1.5rem;
+  margin-top: -10%;
+  margin-left: 33%;
+}
+@media (max-width: 500px) {
+  .main header.top-content p {
+    font-size: 1.5rem;
+    margin-top: 3%;
+    margin: 0 auto;
+  }
+}
+.main header.top-content .button {
+  width: 150px;
+  padding: 2%;
+  text-align: center;
+  border-radius: 7%;
+  background: #009959;
+  color: #141414;
+  margin-left: 33%;
+}
+@media (max-width: 500px) {
+  .main header.top-content .button {
+    display: block;
+    width: 100%;
+    margin-left: 0;
+    margin-top: 2%;
+  }
+}
+@media (max-width: 500px) {
+  .main header.top-content {
+    flex-flow: column;
+    box-shadow: none;
+  }
+}
+.main header nav {
+  background: #141414;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  padding: 0.2%;
+}
+@media (max-width: 500px) {
+  .main header nav {
+    flex-flow: column;
+    text-align: center;
+  }
+}
+.main header nav a {
+  color: #cacaca;
+  text-decoration: none;
+  padding: 1%;
+}
+.main header nav a:hover {
+  animation: myNav ease-in-out 1s;
+}
+@keyframes myNav {
+  0% {
+    background: #141414;
+    color: #cacaca;
+  }
+  50% {
+    background: #cacaca;
+    color: #141414;
+  }
+  100% {
+    background: #141414;
+    color: #cacaca;
+  }
+}
+.main section.intro {
+  background: #2e2e2e;
+  width: 55%;
+  margin: 0 auto;
+  padding: 1%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+@media (max-width: 500px) {
+  .main section.intro {
+    padding: 2%;
+  }
+}
+.main .skills-work {
+  width: 56%;
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0 auto;
+  margin-bottom: 10%;
+}
+.main .skills-work section.skills {
+  width: 48%;
+  background: #2e2e2e;
+  margin: 1%;
+  padding: 1%;
+}
+.main .skills-work section.skills ul li {
+  padding: 1%;
+  margin-bottom: -1%;
+  border: 2px solid #484848;
+}
+.main .skills-work section.skills ul li:nth-child(1),
+.main .skills-work section.skills ul li:nth-child(2),
+.main .skills-work section.skills ul li:nth-child(3),
+.main .skills-work section.skills ul li:nth-child(4) {
+  border-bottom: none;
+}
+.main .skills-work section.skills h3 {
+  display: inline-block;
+  font-size: 1.5rem;
+  border-bottom: 2px solid #fcfcfc;
+  margin-bottom: 2%;
+}
+.main .skills-work section.work-history {
+  width: 48%;
+  background: #2e2e2e;
+  margin: 1%;
+  padding: 1%;
+}
+.main strong {
+  font-weight: bold;
+  color: #3fa;
+  text-shadow: 0.2rem 0.3rem 0.5rem #141414;
+}
+.main table {
+  width: 100%;
+}
+.main table tr th {
+  font-weight: bold;
+  text-align: left;
+  background: #141414;
+  padding: 0.3%;
+}
+@media (max-width: 500px) {
+  .main table tr th {
+    display: none;
+  }
+}
+.main table tr th:nth-child(1),
+.main table tr th:nth-child(4) {
+  text-align: center;
+}
+.main table tr td {
+  padding: 1%;
+}
+@media (max-width: 500px) {
+  .main table tr td {
+    display: block;
+  }
+}
+@media (max-width: 500px) {
+  .main table tr {
+    display: block;
+  }
+}
+.main table tr:nth-child(even) {
+  background: #484848;
+}
+.main h3 {
+  display: inline-block;
+  font-size: 1.5rem;
+  border-bottom: 2px solid #fcfcfc;
+  margin-bottom: 2%;
+}
+footer {
+  width: 100%;
+  background: #141414;
+  color: #cacaca;
+  text-align: center;
+  padding: 1%;
+}
+footer a {
+  color: #cacaca;
+  text-decoration: none;
+}

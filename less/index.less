@@ -1,3 +1,27 @@
+@color-background: #2e2e2e;
+@background-darker: darken(@color-background, 10%);
+@background-lighter: lighten(@color-background, 10%);
+@button-background: darken(#3fa, 30%);
+@text-color: #cacaca;
+@text-large: 3.75rem;
+@text-medium: 1.5rem;
+@text-medium-2: 1.75rem;
+@text-small: .5rem;
+.flex-desktop {
+	display: flex;
+	flex-flow: row wrap;
+}
+.button {
+	width: 150px;
+	padding: 2%;
+	text-align: center;
+	border-radius: 7%;
+	background: @button-background;
+	color:@background-darker;
+}
+
+
+
 // Is this working?
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -52,8 +76,213 @@ table {
 * {
     box-sizing: border-box;
 }
+.main {
+	height: 85%;
+	background: @background-lighter;
+	color: @text-color;
+	header {
+		width: 100%;
+		&.top-content {
+			.flex-desktop();
+			width: 55%;
+			margin: 0 auto;
+			margin-top: 10px;
+			background: @color-background;
+			color: @text-color;
+			padding: 2%;
+			box-shadow: .5rem .3rem .5rem @background-darker;
+			h1 {
+				font-size: @text-large;
+				align-self: center;
 
-html, body {
-    height: 100%;
+				@media (max-width: 500px) {
+					font-size: @text-medium-2;
+				}
+			}
+			img {
+				&.profile {
+					order: -1;
+					width: 300px;
+					height: 300px;
+					border-radius: 75%;
+					overflow: hidden;
+					border: 4px solid @background-lighter;
+
+					@media (max-width: 500px) {
+						width: 150px;
+						height: 150px;
+						margin: 0 auto;
+					}
+				}
+			}
+			p {
+				flex-grow: 1;
+				font-size: @text-medium;
+				margin-top: -10%;
+				margin-left: 33%;
+
+				@media (max-width: 500px) {
+					font-size: @text-medium;
+					margin-top: 3%;
+					margin: 0 auto;
+				}
+			}
+			.button {
+				.button();
+				margin-left: 33%;
+
+				@media (max-width: 500px) {
+					display: block;
+					width: 100%;
+					margin-left: 0;
+					margin-top: 2%;
+				}
+			}
+			@media (max-width: 500px) {
+				flex-flow: column;
+				box-shadow: none;
+			}
+		}
+		nav {
+			background: @background-darker;
+			.flex-desktop();
+			justify-content: space-evenly;
+			padding: .2%;
+			@media (max-width: 500px) {
+				flex-flow: column;
+				text-align: center;
+			}
+			a {	
+				color: @text-color;
+				text-decoration: none;
+				padding: 1%;
+
+				&:hover {
+					animation: myNav ease-in-out 1s;
+				}
+			}
+		}
+	}
+
+	@keyframes myNav {
+		0% {
+			background: @background-darker;
+			color: @text-color;
+		}
+		50% {
+			background: @text-color;
+			color: @background-darker;
+		}
+		100% {
+			background: @background-darker;
+			color: @text-color;
+		}
+	}
+	section {
+		&.intro {
+			background: @color-background;
+			width: 55%;
+			margin: 0 auto;
+			padding: 1%;
+			margin-top: 1%;
+			margin-bottom: 1%;
+
+			@media (max-width: 500px) {
+				padding: 2%;
+			}
+		}
+	}
+	.skills-work {
+		width: 56%;
+		.flex-desktop();
+		margin: 0 auto;
+		margin-bottom: 10%;
+		section {
+			&.skills {
+				width: 48%;
+				background: @color-background;
+				margin: 1%;
+				padding: 1%;
+
+				ul li {
+					padding: 1%;
+					margin-bottom: -1%;
+					border: 2px solid @background-lighter;
+				}
+				ul li:nth-child(1), ul li:nth-child(2), ul li:nth-child(3), ul li:nth-child(4) {
+					border-bottom: none;
+				}
+				h3 {
+					display: inline-block;
+					font-size: @text-medium;
+					border-bottom: 2px solid #fcfcfc;
+					margin-bottom: 2%;
+				}
+			}
+			&.work-history {
+				width: 48%;
+				background: @color-background;
+				margin: 1%;
+				padding: 1%;
+			}
+		}
+	}
+	strong {
+		font-weight: bold;
+		color: #3fa;
+		text-shadow: .2rem .3rem .5rem @background-darker;
+	}
+
+	table {
+		width: 100%;
+		tr {
+			th {
+				font-weight: bold;
+				text-align: left;
+				background: @background-darker;
+				padding: .3%;
+
+				@media (max-width: 500px) {
+					display: none;
+				}
+			}
+			th:nth-child(1), th:nth-child(4) {
+				text-align: center;
+			}
+			td {
+				padding: 1%;
+
+				@media (max-width: 500px) {
+					display: block;
+				}
+			}
+			@media (max-width: 500px) {
+				display: block;
+			}
+		}
+		tr:nth-child(even) {
+			background: @background-lighter;
+		}
+	}
+	h3 {
+		display: inline-block;
+		font-size: @text-medium;
+		border-bottom: 2px solid #fcfcfc;
+		margin-bottom: 2%;
+	}
+	@media(max-width: 500px) {
+
+	}
 }
+footer {
+	width: 100%;
+	background: @background-darker;
+	color: @text-color;
+	text-align: center;
+	padding: 1%;
 
+	a {
+		color: @text-color;
+		text-decoration: none;
+	}
+}
